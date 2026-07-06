@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="result-box">
+
+            <h1>Loan Prediction Result</h1>
+
+            {% if prediction == 1 %}
+
+                <h2 class="approved">🎉 Congratulations!</h2>
+
+                <p class="message">
+                    Your loan is <strong>Approved</strong>.
+                </p>
+
+            {% else %}
+
+                <h2 class="rejected">❌ Sorry!</h2>
+
+                <p class="message">
+                    Your loan is <strong>Not Approved</strong>.
+                </p>
+
+            {% endif %}
+
+            <br>
+
+            <a href="/" class="btn">Predict Again</a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
