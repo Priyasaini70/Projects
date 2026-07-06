@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="title">
+        <h1>Loan Approval Prediction</h1>
+        <p>Enter Applicant Details</p>
+    </div>
+
+    <form action="/predict" method="POST">
+
+        <div class="input-box">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Enter Age" required>
+        </div>
+        <br>
+
+        <div class="input-box">
+            <label for="income">Annual Income</label>
+            <input type="number" id="income" name="income" placeholder="Enter Annual Income" required>
+        </div>
+        <br><br>
+
+        <div class="input-box">
+            <label for="credit_score">Credit Score</label>
+            <input type="number" id="credit_score" name="credit_score" placeholder="Enter Credit Score" required>
+        </div>        <br><br>
+
+
+        <div class="input-box">
+            <label for="loan_amount">Loan Amount</label>
+            <input type="number" id="loan_amount" name="loan_amount" placeholder="Enter Loan Amount" required>
+        </div>        <br><br>
+
+
+        <div class="input-box">
+            <label for="loan_term">Loan Term (Months)</label>
+            <input type="number" id="loan_term" name="loan_term" placeholder="Enter Loan Term" required>
+        </div>        <br><br>
+
+
+        <div class="input-box">
+            <label for="employment_status">Employment Status</label>
+
+            <select id="employment_status" name="employment_status" required>
+
+                <option value="">Select Employment Status</option>
+
+                <option value="Employed">Employed</option>
+
+                <option value="Self-Employed">Self-Employed</option>
+
+                <option value="Unemployed">Unemployed</option>
+
+            </select>
+        </div>
+        <br><br>
+
+        <div class="button-box">
+            <input type="submit" value="Predict Loan Approval">
+        </div>  <br><br>
+
+
+    </form>
+
+</div>
+
+</body>
+</html>

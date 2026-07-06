@@ -1,0 +1,92 @@
+<h1>🌱 Fertilizer Recommendation</h1>
+<p class="subtitle">Fill the details to get the best fertilizer.</p>
+<link rel="stylesheet" href="../static/style.css">
+<br>
+
+<form action="/fertilizer" method="POST">
+
+    <div class="grid">
+
+        <div class="input-group">
+            <label>🌡 Temperature</label><br>
+            <input type="number" step="0.01" name="temperature" placeholder="°C" required>
+        </div>
+
+        <div class="input-group">
+            <label>💧 Moisture</label><br>
+            <input type="number" step="0.01" name="moisture" placeholder="%" required>
+        </div>
+
+        <br><br>
+
+        <div class="input-group">
+            <label>🌧 Rainfall</label><br>
+            <input type="number" step="0.01" name="rainfall" placeholder="mm" required>
+        </div>
+
+        <div class="input-group">
+            <label>🧪 pH</label><br>
+            <input type="number" step="0.01" name="ph" placeholder="6.5" required>
+        </div>
+
+        <br><br>
+
+        <div class="input-group">
+            <label>🟢 Nitrogen</label><br>
+            <input type="number" step="0.01" name="nitrogen" required>
+        </div>
+
+        <div class="input-group">
+            <label>🟡 Phosphorous</label><br>
+            <input type="number" step="0.01" name="phosphorous" required>
+        </div>
+
+        <br><br>
+
+        <div class="input-group">
+            <label>Potassium</label><br>
+            <input type="number" step="0.01" name="potassium" required>
+        </div>
+
+        <div class="input-group">
+            <label>Carbon</label><br>
+            <input type="number" step="0.01" name="carbon" required>
+        </div>
+
+        <br><br>
+
+        <div class="input-group">
+            <label>🟤 Soil Type</label><br>
+            <select name="soil" required>
+                {% for s in soils %}
+                <option value="{{ s }}">{{ s }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>🌾 Crop Type</label><br>
+            <select name="crop" required>
+                {% for c in crops %}
+                <option value="{{ c }}">{{ c }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+    </div>
+
+    <br>
+
+    <button type="submit">🌱 Recommend Fertilizer</button>
+     {% if prediction %}
+      <div class="result">
+        <h2>Recommended Fertilizer: {{ prediction }}</h2>
+      </div>
+      {% endif %}
+
+      <a href="/">
+        <button type="button">Home</button>
+      </a>
+    </div>
+
+</form>
