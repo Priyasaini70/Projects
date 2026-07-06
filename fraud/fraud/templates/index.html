@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Detection System</title>
+    <link rel="stylesheet" href='../static/style.css'>
+
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Bank Fraud Detection</h2>
+
+<form action="/" method="POST">
+
+    <label>Branch</label>
+    <select name="branch">
+        <option>Branch A</option>
+        <option>Branch B</option>
+        <option>Branch C</option>
+    </select>
+
+    <label>Time of Day</label>
+    <select name="time_of_day">
+        <option>Morning</option>
+        <option>Afternoon</option>
+        <option>Evening</option>
+        <option>Night</option>
+    </select>
+
+    <label>Account Type</label>
+    <select name="Acct_type">
+        <option>Saving</option>
+        <option>Current</option>
+    </select>
+
+    <label>Transaction Type</label>
+    <select name="type">
+        <option>Cash Withdrawal</option>
+        <option>Transfer</option>
+        <option>Deposit</option>
+        <option>Payment</option>
+    </select>
+
+    <label>Amount</label>
+    <input type="number" name="amount" required>
+
+    <button type="submit">Predict</button>
+
+</form>
+
+{% if prediction %}
+<h3>Prediction : {{ prediction }}</h3>
+{% endif %}
+
+</div>
+
+</body>
+</html>
